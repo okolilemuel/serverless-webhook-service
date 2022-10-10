@@ -1,0 +1,24 @@
+openapi: 3.0.0
+
+info:
+  title: 'Serverless Webhook Service'
+  description: "Serverless Webhook Service"
+  version: 1.0.0
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  responses:
+    400:
+      $ref: "./responses/400.yml"
+    401:
+      $ref: "./responses/401.yml"
+    500:
+      $ref: "./responses/500.yml"
+
+paths:
+  /v1:
+    $ref: './functions/post-webhook-event.yml#/paths'

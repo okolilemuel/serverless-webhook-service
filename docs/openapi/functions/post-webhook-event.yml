@@ -1,0 +1,53 @@
+paths:
+  post:
+    summary: '/v1/'
+    description: 'Send new webhook event to URL destination'
+    tags:
+      - Webhook
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - url
+              - payload
+            properties:
+              url:
+                type: string
+                description: Webhook event destiantion URL
+                example: https://webhook.site/#!/463d3389-0927-414f-976d-3ed37efc3d6f
+              payload:
+                type: object
+                description: Webhook event payload
+              retries:
+                type: number
+                description: Number of times to retry sending webhook event to detination
+                example: 24
+              timeout:
+                type: number
+                description: Http request timeout to destination (milliseconds)
+                example: 3000
+    responses:
+      200:
+        description: 'Successfull Request'
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                data:
+                  type: object
+                  properties:
+                    event_id:
+                      type: string
+                    creadted_at:
+                      type: string
+      400:
+        $ref: '#/components/responses/400'
+      401:
+        $ref: '#/components/responses/401'
+      500:
+        $ref: '#/components/responses/500'

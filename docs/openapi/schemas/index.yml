@@ -1,0 +1,6 @@
+OkResponse:
+  $ref: "./ok-response.yml"
+ErrorResponse:
+  $ref: "./error-response.yml"
+ValidationErrorResponse:
+  $ref: "./validation-error-response.yml"
