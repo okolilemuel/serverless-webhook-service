@@ -16,8 +16,11 @@ The retry interval is set to 1 hour by default and the max retry count is set to
 ## Usage
 
 Clone the repository and run `yarn` command to install dependencies.
+
 Run `yarn deploy:staging` or `yarn deploy:production` command to deploy the service to your `AWS` account
+
 Run `yarn start` command to start the service locally
+
 Run `npx sls info --stage [staging or production]` command to get the service base URL
 
 
